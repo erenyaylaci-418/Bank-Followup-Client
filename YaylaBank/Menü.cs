@@ -81,8 +81,6 @@ namespace YaylaBank
             Costumer.Id = ID;
             ID++;
 
-            //Costumers[ID] = Costumer;
-           
             Console.WriteLine("**********************************");
             Console.WriteLine("1-Giriş Menüsüne Dön 2-Yeni Ekle\nSeçiminiz: ");
             string a = Console.ReadLine();

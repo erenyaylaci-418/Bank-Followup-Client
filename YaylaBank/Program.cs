@@ -20,7 +20,13 @@ namespace YaylaBank
             Müsteri2.Bakiye = 950;
             Müsteri2.Id = 1;
 
-            client[] Costumers = { Müsteri1, Müsteri2 };
+            client Müsteri3 = new client();
+            Müsteri3.Name = "Zeynep";
+            Müsteri3.Surname = "Yaylacı";
+            Müsteri3.Bakiye = 91550;
+            Müsteri3.Id = 2;
+
+            client[] Costumers = { Müsteri1, Müsteri2,Müsteri3 };
             Menü menü = new Menü();
             menü.Giris(Costumers);
 

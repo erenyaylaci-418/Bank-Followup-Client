@@ -55,7 +55,7 @@ namespace YaylaBank
         {
             Console.WriteLine("Müşteri ID'si ==> ");
             int id = Int32.Parse(Console.ReadLine());
-
+            Console.WriteLine("________________________________");
             client ClientSearch = Costumers[id];
             Console.WriteLine(ClientSearch.Id + " ID'li " + ClientSearch.Name + " " + ClientSearch.Surname + " Kişisi'nin Bakiyesi: " + ClientSearch.Bakiye);
             Menü menü = new Menü();

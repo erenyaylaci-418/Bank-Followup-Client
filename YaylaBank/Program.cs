@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace YaylaBank
 {
@@ -6,32 +7,47 @@ namespace YaylaBank
     {
         static void Main(string[] args)
         {
+            List<Client> Costumers = new List<Client>();
+            ClientManager clientManager = new ClientManager();
+            bool back = true;
+            while (back == true)
+            {
+                
+
+                string secim = clientManager.Giris();
+                if (secim == "1")
+                {
+                    Client client = clientManager.AddInfo(Costumers);
+                    Costumers.Add(client);
+                    back = clientManager.Back();
+
+                }
+                if (secim == "2")
+                {
+                    Console.WriteLine("Aramak istediğiniz Müşterinin ID'si ==> ");
+                    int SearchId = Convert.ToInt32(Console.ReadLine());
+                    foreach (Client costumer in Costumers)
+                    {
+                        if (SearchId == costumer.Id)
+                        {
+                            clientManager.PersonAbout(costumer);
+                        }
+                    }
+                    back = clientManager.Back();
+                }
+                if (secim == "3")
+                {
+                    foreach (Client costumer in Costumers)
+                    { 
+                        clientManager.PersonAbout(costumer);
+                    }
+                    back = clientManager.Back();
+
+                }
+
+
+            }
             
-
-            client Müsteri1 = new client();
-            Müsteri1.Name = "Eren";
-            Müsteri1.Surname = "Yaylacı";
-            Müsteri1.Bakiye = 780;
-            Müsteri1.Id = 0;
-
-            client Müsteri2 = new client();
-            Müsteri2.Name = "Taha";
-            Müsteri2.Surname = "Yaylacı";
-            Müsteri2.Bakiye = 950;
-            Müsteri2.Id = 1;
-
-            client Müsteri3 = new client();
-            Müsteri3.Name = "Zeynep";
-            Müsteri3.Surname = "Yaylacı";
-            Müsteri3.Bakiye = 91550;
-            Müsteri3.Id = 2;
-
-            client[] Costumers = { Müsteri1, Müsteri2,Müsteri3 };
-            Menü menü = new Menü();
-            menü.Giris(Costumers);
-
-
-
         }
     }
 }
